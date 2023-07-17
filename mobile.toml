@@ -1,0 +1,8 @@
+[app]
+name = "egui-mobile-test"
+stylized-name = "Egui Mobile Test"
+domain = "egui.hellopaint.io"
+template-pack = "egui"
+
+[apple]
+development-team = "<apple development team id>"
