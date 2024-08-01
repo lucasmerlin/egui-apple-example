@@ -20,16 +20,12 @@ project-dependencies = [ "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21" ]
 app-plugins = [ "org.jetbrains.kotlin.android" ]
 app-theme-parent = "Theme.MaterialComponents.DayNight.DarkActionBar"
 
-[dependencies] 
+[dependencies]
 log = "0.4.14"
 chrono = "0.4"
-pollster = "0.2"
-egui = "0.22"
-wgpu = "0.16"
-winit = { version = "0.28", features = ["android-native-activity"] }
-egui_demo_lib = "0.22"
-egui-winit = { version = "0.22", default-features = false }
-egui-wgpu = { version = "0.22", features = [ "winit" ] }
+eframe = { version = "0.28", default-features = false, features = ["wgpu", "default_fonts", "android-native-activity"] }
+egui_demo_lib = "0.28"
+winit = "0.30"
 
 [target.'cfg(target_os = "android")'.dependencies]
 android_logger = "0.13.1"
@@ -37,11 +33,13 @@ android_logger = "0.13.1"
 [target.'cfg(not(target_os = "android"))'.dependencies]
 env_logger = "0.9"
 
-
 [patch.crates-io]
-winit = { git = "https://github.com/lucasmerlin/winit", branch = "v0.28.x_ime_support" }
-egui = { git = "https://github.com/lucasmerlin/egui", branch = "mobile_ime_support"}
-egui-winit = { git = "https://github.com/lucasmerlin/egui", branch = "mobile_ime_support"}
-eframe = { git = "https://github.com/lucasmerlin/egui", branch = "mobile_ime_support"}
-egui-wgpu = { git = "https://github.com/lucasmerlin/egui", branch = "mobile_ime_support"}
-android-activity = { git = "https://github.com/lucasmerlin/android-activity", branch = "ime_support"}
+eframe = { git = "https://github.com/lucasmerlin/egui", branch = "add-ios-pipeline"}
+egui_demo_lib = { git = "https://github.com/lucasmerlin/egui", branch = "add-ios-pipeline"}
+
+#eframe = {git = "https://github.com/emilk/egui", branch = "master"}
+#
+#eframe = { path = "../../IdeaProjects/egui/crates/eframe" }
+#egui_demo_lib = { path = "../../IdeaProjects/egui/crates/egui_demo_lib" }
+##winit = { git = "https://github.com/lucasmerlin/winit", branch = "geph-v0.29.x" }
+#winit = { path = "../../IdeaProjects/github/winit"}

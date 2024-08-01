@@ -3,6 +3,7 @@ name = "egui-mobile-test"
 stylized-name = "Egui Mobile Test"
 domain = "egui.hellopaint.io"
 template-pack = "egui"
+identifier = "egui.hellopaint.io"
 
 [apple]
-development-team = "<apple development team id>"
+development-team = "9GV4V293LJ"
